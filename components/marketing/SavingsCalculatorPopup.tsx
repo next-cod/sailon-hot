@@ -110,7 +110,7 @@ export function SavingsCalculatorPopup({ onCreateBot }: SavingsCalculatorPopupPr
     if (process.env.NODE_ENV === "development" && (params.has("popup") || params.get("calculator") === "1")) return;
     if (window.sessionStorage.getItem(TRIAL_SESSION_KEY) === "1") return;
 
-    const sectionHeading = document.querySelector('[data-node-id="2007:244"], .responsive-landing #pricing');
+    const sectionHeading = document.querySelector('[data-node-id="2007:118"], .responsive-landing #pricing');
     if (!sectionHeading) return;
 
     const observer = new IntersectionObserver((entries) => {
@@ -187,17 +187,17 @@ export function SavingsCalculatorPopup({ onCreateBot }: SavingsCalculatorPopupPr
   const isCalculator = activePopup === "calculator";
   const promo = activePopup === "trial"
     ? {
-        badge: "Месяц бесплатно",
+        badge: "14 дней бесплатно",
         title: "Проверьте Сэйлон на реальных диалогах",
         text: "Подключите первый канал и посмотрите, как AI-бот отвечает вашим клиентам.",
-        facts: ["Без автоматических списаний"],
-        cta: "Попробовать месяц бесплатно",
+        facts: ["10 000 кредитов уже на аккаунте"],
+        cta: "Начать бесплатный тест",
       }
     : {
         badge: "Можно запускаться",
         title: "Настройте своего AI-бота",
         text: "Добавьте знания, выберите характер и первый сценарий — Сэйлон возьмёт входящие обращения в работу.",
-        facts: ["Месяц бесплатно", "Настройка без кода"],
+        facts: ["14 дней бесплатно", "Настройка без кода"],
         cta: "Создать AI-бота",
       };
 
@@ -244,7 +244,7 @@ export function SavingsCalculatorPopup({ onCreateBot }: SavingsCalculatorPopupPr
             </div>
 
             <button className="savings-popup__cta" type="button" onClick={createBot}>Создать AI-бота <ArrowRight size={19} aria-hidden="true" /></button>
-            <p className="savings-popup__note">Расчёт ориентировочный: 160 рабочих часов в месяц и текущая тарифная сетка Сэйлона. Самостоятельная настройка бесплатна.</p>
+            <p className="savings-popup__note">Расчёт ориентировочный: 160 рабочих часов в месяц и текущая тарифная сетка Сэйлона. Настроить бота самостоятельно можно бесплатно.</p>
           </>
         ) : (
           <div className="marketing-promo">

@@ -98,7 +98,7 @@ const faq = [
   ["Нужно ли уметь программировать?", "Нет. Базовые знания, сценарии и характер настраиваются через понятный интерфейс."],
   ["Какие каналы доступны сейчас?", "Подключаем сайт и популярные мессенджеры. Точный список зависит от выбранной конфигурации и этапа запуска."],
   ["Можно подключить нашу CRM или расписание?", "Да. Типовые подключения настраиваются готовыми способами, нестандартную интеграцию можно обсудить отдельно."],
-  ["Что будет после бесплатного месяца?", "Доступ не продлится автоматически. Вы увидите результаты теста и сможете сами решить, нужен ли платный тариф."],
+  ["Что будет после 14 дней теста?", "Доступ не продлится автоматически. Вы увидите результаты теста и сможете сами решить, нужен ли платный тариф."],
 ];
 
 const team = [
@@ -228,11 +228,26 @@ export function FunctionalLayer({ rootRef, language }: { rootRef: React.RefObjec
   }, [heroLive]);
 
   useEffect(() => {
-    controlCardGroups.forEach((group, groupIndex) => group.forEach((id) => {
-      const node = rootRef.current?.querySelector<HTMLElement>(`[data-node-id="${id}"]`);
-      node?.classList.add("control-card-motion");
-      node?.classList.toggle("control-card-fourth", groupIndex === 3);
-    }));
+    const root = rootRef.current;
+    if (!root) return;
+    const applyMotionClasses = () => {
+      let found = 0;
+      controlCardGroups.forEach((group, groupIndex) => group.forEach((id) => {
+        const node = root.querySelector<HTMLElement>(`[data-node-id="${id}"]`);
+        if (!node) return;
+        found += 1;
+        node.classList.add("control-card-motion");
+        node.classList.toggle("control-card-fourth", groupIndex === 3);
+      }));
+      return found;
+    };
+    const expectedNodes = controlCardGroups.reduce((total, group) => total + group.length, 0);
+    if (applyMotionClasses() === expectedNodes) return;
+    const observer = new MutationObserver(() => {
+      if (applyMotionClasses() === expectedNodes) observer.disconnect();
+    });
+    observer.observe(root, { childList: true, subtree: true });
+    return () => observer.disconnect();
   }, [rootRef]);
 
   useEffect(() => {
@@ -374,7 +389,7 @@ export function FunctionalLayer({ rootRef, language }: { rootRef: React.RefObjec
         {scenarios.map((item, index) => <button key={item.name} type="button" role="tab" aria-selected={scenario === index} onClick={() => setScenario(index)}>{t(item.name)}</button>)}
       </div>
 
-      <section className="scenario-live" aria-live="polite" aria-label={`${t("Сценарий")}: ${t(scenarios[scenario].name)}`}>
+      <section key={scenario} className="scenario-live scenario-live-enter" aria-live="polite" aria-label={`${t("Сценарий")}: ${t(scenarios[scenario].name)}`}>
         <div className="scenario-live-chat">
           <header><strong>{t("Диалог в работе")}</strong><span><i />{t("Онлайн")}</span></header>
           <div className="scenario-live-messages">
@@ -418,7 +433,7 @@ export function FunctionalLayer({ rootRef, language }: { rootRef: React.RefObjec
       </section>
 
       {ctaAreas.map(({ radius, tone, ...area }, index) => (
-        <button key={index} type="button" className={`cta-hit cta-hit--${tone}`} style={{ ...area, borderRadius: radius }} aria-label={language === "ru" ? "Попробовать месяц бесплатно" : "Start free trial"} onClick={() => { setSent(false); setDialogOpen(true); }} />
+        <button key={index} type="button" className={`cta-hit cta-hit--${tone}`} style={{ ...area, borderRadius: radius }} aria-label={language === "ru" ? "Начать бесплатный тест" : "Start free trial"} onClick={() => { setSent(false); setDialogOpen(true); }} />
       ))}
       <button type="button" className="cta-hit cta-hit--chat" style={{ left: 541, top: 579, width: 252, height: 96 }} aria-label={t("Поразговаривать с ботом")} onMouseEnter={() => setChatHovered(true)} onMouseLeave={() => setChatHovered(false)} onFocus={() => setChatHovered(true)} onBlur={() => setChatHovered(false)} onClick={() => setBotChatOpen(true)} />
       <a className="cta-hit cta-hit--light cta-hit--custom" style={{ left: 864, top: 9389, width: 256, height: 50, borderRadius: 999 }} href="/contacts" aria-label={t("Обсудить доработку")} />
@@ -456,7 +471,7 @@ export function FunctionalLayer({ rootRef, language }: { rootRef: React.RefObjec
               <div className="trial-success"><span>✓</span><h2 id="trial-title">{language === "ru" ? "Письмо подготовлено" : "Email prepared"}</h2><p>{language === "ru" ? `Отправьте подготовленное письмо на ${legalDetails.email} — мы ответим и поможем запустить тест.` : `Send the prepared email to ${legalDetails.email}, and we will help you start the trial.`}</p><button type="button" onClick={() => setDialogOpen(false)}>{t("Готово")}</button></div>
             ) : (
               <form onSubmit={submit}>
-                <span className="trial-kicker">{t("Месяц бесплатно")}</span>
+                <span className="trial-kicker">{t("14 дней бесплатно")}</span>
                 <h2 id="trial-title">{t("Посмотрите Сэйлон на своих обращениях")}</h2>
                 <p>{t("Оставьте контакты — поможем подключить первый канал и настроить тест.")}</p>
                 <label>{t("Ваше имя")}<input required name="name" autoComplete="name" /></label>
@@ -465,7 +480,7 @@ export function FunctionalLayer({ rootRef, language }: { rootRef: React.RefObjec
                   <input required type="checkbox" name="personal-data-consent" />
                   <span>{language === "ru" ? "Согласен на " : "I agree to the "}<Link href="/legal/consent" target="_blank" rel="noopener noreferrer">{language === "ru" ? "обработку персональных данных" : "processing of personal data"}</Link></span>
                 </label>
-                <button type="submit">{t("Попробовать месяц бесплатно")}</button>
+                <button type="submit">{t("Начать бесплатный тест")}</button>
                 <small>{language === "ru" ? "Условия использования данных приведены в политике и отдельном согласии." : "Data-use terms are described in the policy and separate consent."}</small>
               </form>
             )}
