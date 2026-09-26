@@ -1145,67 +1145,67 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
         </div>
       </div>
       <div className="absolute bg-[#edf2ee] h-[1052px] left-0 top-[10483.03px] w-[1700px]" data-node-id="2013:149" data-name="Section · фон" />
-      <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[203px] justify-center leading-[0] left-[209px] not-italic text-[#151917] text-[64px] top-[10760.53px] tracking-[-2.88px] w-[926px]" data-node-id="2007:244">
-        <p className="leading-[65.28px]">Сэйлон можно бесплатно проверить в работе и только потом выбрать тариф</p>
+      <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[190px] justify-center leading-[0] left-[209px] not-italic text-[#151917] text-[56px] top-[10695.53px] tracking-[-2.4px] w-[926px]" data-node-id="2007:244">
+        <p className="leading-[58px]">Месяц бесплатно. Затем выберите пакет под ваш поток обращений</p>
       </div>
       <div className="absolute bg-white h-[320px] left-[209px] rounded-[28px] top-[10930.03px] w-[416px]" data-node-id="2013:150" data-name="Background+Border · фон" />
       <div className="absolute bg-white h-[320px] left-[1073px] rounded-[28px] top-[10930.03px] w-[416px]" data-node-id="2136:17" data-name="Background+Border · фон" />
       <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[20px] justify-center leading-[0] left-[242px] not-italic text-[#626d68] text-[18px] top-[10980.32px] w-[102.168px]" data-node-id="2007:246">
-        <p className="leading-[20px]">Новичок</p>
+        <p className="leading-[20px]">Старт</p>
       </div>
       <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[20px] justify-center leading-[0] left-[1106px] not-italic text-[#626d68] text-[18px] top-[10980.32px] w-[102.168px]" data-node-id="2136:18">
-        <p className="leading-[20px]">Премиум</p>
+        <p className="leading-[20px]">Команда</p>
       </div>
       <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[40px] justify-center leading-[0] left-[242px] not-italic text-[#151917] text-[54px] top-[11042.03px] tracking-[-3px] w-[224px]" data-node-id="2007:247">
-        <p className="leading-[40px]">10 000 ₽</p>
+        <p className="leading-[40px]">5 900 ₽</p>
       </div>
       <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[40px] justify-center leading-[0] left-[1106px] not-italic text-[#151917] text-[54px] top-[11042.03px] tracking-[-3px] w-[224px]" data-node-id="2136:19">
-        <p className="leading-[40px]">30 000 ₽</p>
+        <p className="leading-[40px]">24 900 ₽</p>
       </div>
       <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-normal h-[20px] justify-center leading-[0] left-[431px] not-italic text-[#626d68] text-[14px] top-[11056.03px] w-[164px]" data-node-id="2007:248">
-        <p className="leading-[20px]">в месяц · без НДС</p>
+        <p className="leading-[20px]">в месяц</p>
       </div>
       <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-normal h-[20px] justify-center leading-[0] left-[1305px] not-italic text-[#626d68] text-[14px] top-[11056.03px] w-[164px]" data-node-id="2136:20">
-        <p className="leading-[20px]">в месяц · без НДС</p>
+        <p className="leading-[20px]">в месяц</p>
       </div>
       <div className="absolute border-[#dce3df] border-solid border-t h-[45.8px] left-[243px] top-[11121.03px] w-[350px]" data-node-id="2013:151" data-name="HorizontalBorder · фон" />
       <div className="absolute border-[#dce3df] border-solid border-t h-[45.8px] left-[1107px] top-[11121.03px] w-[350px]" data-node-id="2136:21" data-name="HorizontalBorder · фон" />
       <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-medium h-[17px] justify-center leading-[0] left-[242px] not-italic text-[#626d68] text-[18px] top-[11143.53px] w-[324px]" data-node-id="2007:249">
-        <p className="leading-[24.8px]">Для небольшого входящего потока</p>
+        <p className="leading-[24.8px]">≈ 300 диалогов · 1 канал</p>
       </div>
       <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-medium h-[17px] justify-center leading-[0] left-[1106px] not-italic text-[#626d68] text-[18px] top-[11143.53px] w-[324px]" data-node-id="2136:22">
-        <p className="leading-[24.8px]">Для высокой нагрузки</p>
+        <p className="leading-[24.8px]">≈ 2 000 диалогов · до 5 каналов</p>
       </div>
       <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-normal h-[17px] justify-center leading-[0] left-[242px] not-italic text-[#626d68] text-[16px] top-[11083.53px] w-[324px]" data-node-id="2136:16">
-        <p className="leading-[24.8px]">до 20 обращений / день</p>
+        <p className="leading-[24.8px]">1 500 ответов бота / месяц</p>
       </div>
       <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-normal h-[17px] justify-center leading-[0] left-[1106px] not-italic text-[#626d68] text-[16px] top-[11083.53px] w-[324px]" data-node-id="2136:23">
-        <p className="leading-[24.8px]">50-100 обращений / день</p>
+        <p className="leading-[24.8px]">10 000 ответов бота / месяц</p>
       </div>
       <div className="absolute bg-[#77d65b] h-[48px] left-[242px] rounded-[33554400px] shadow-[0px_12px_36px_0px_rgba(95,198,70,0.24)] top-[11176.03px] w-[350px]" data-node-id="2013:152" data-name="Link · фон" />
       <div className="absolute bg-[#77d65b] h-[48px] left-[1106px] rounded-[33554400px] shadow-[0px_12px_36px_0px_rgba(95,198,70,0.24)] top-[11176.03px] w-[350px]" data-node-id="2136:24" data-name="Link · фон" />
       <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[17px] justify-center leading-[0] left-[417px] not-italic text-[#151917] text-[17px] text-center top-[11199.44px] w-[264px]" data-node-id="2007:253">
-        <p className="leading-[23.25px]">Начать бесплатный тест</p>
+        <p className="leading-[23.25px]">Попробовать месяц бесплатно</p>
       </div>
       <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[17px] justify-center leading-[0] left-[1281px] not-italic text-[#151917] text-[17px] text-center top-[11199.44px] w-[264px]" data-node-id="2136:25">
-        <p className="leading-[23.25px]">Начать бесплатный тест</p>
+        <p className="leading-[23.25px]">Попробовать месяц бесплатно</p>
       </div>
       <div className="absolute bg-[#123a30] border border-[#123a30] border-solid h-[332px] left-[641px] rounded-[28px] top-[10907.32px] w-[416px]" data-node-id="2013:153" data-name="Background+Border · фон" />
       <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[20px] justify-center leading-[0] left-[674px] not-italic text-[18px] text-white top-[10950.03px] w-[118px]" data-node-id="2007:254">
-        <p className="leading-[20px]">Среднячок</p>
+        <p className="leading-[20px]">Продажи</p>
       </div>
       <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[40px] justify-center leading-[0] left-[674px] not-italic text-[54px] text-white top-[11012.03px] tracking-[-3px] w-[237px]" data-node-id="2007:255">
-        <p className="leading-[40px]">20 000 ₽</p>
+        <p className="leading-[40px]">11 900 ₽</p>
       </div>
       <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-normal h-[20px] justify-center leading-[0] left-[873px] not-italic text-[13px] text-[rgba(255,255,255,0.5)] top-[11026.03px] w-[150px]" data-node-id="2007:256">
-        <p className="leading-[20px]">в месяц · без НДС</p>
+        <p className="leading-[20px]">в месяц</p>
       </div>
       <div className="absolute bg-[#f8f5ed] h-[48px] left-[674px] rounded-[33554400px] top-[11165.03px] w-[350px]" data-node-id="2013:155" data-name="Link · фон" />
       <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[17px] justify-center leading-[0] left-[849px] not-italic text-[#0d2c27] text-[17px] text-center top-[11188.44px] w-[290px]" data-node-id="2007:261">
-        <p className="leading-[23.25px]">Начать бесплатный тест</p>
+        <p className="leading-[23.25px]">Попробовать месяц бесплатно</p>
       </div>
       <div className="absolute left-[400px] top-[11246px] w-[900px] text-center font-figma text-[14px] leading-[20px] text-[#626d68]">
-        Оплата на сайте не принимается · условия и документы отправим после заявки
+        После бесплатного месяца оплата по счёту · без автоматических списаний
       </div>
       <div className="absolute bg-[#77d65b] h-[39px] left-[863px] rounded-[33554400px] shadow-[0px_4px_5.9px_0px_rgba(0,0,0,0.09)] top-[10887px] w-[194px]" data-node-id="2013:156" data-name="Background · фон" />
       <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[16px] justify-center leading-[0] left-[885px] not-italic text-[16px] text-white top-[10907px] w-[164px]" data-node-id="2007:262">
@@ -1219,31 +1219,31 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
       </div>
       <div className="absolute border-[rgba(220,227,223,0.6)] border-solid border-t h-[45.8px] left-[673px] top-[11109.03px] w-[350px]" data-node-id="2136:34" data-name="HorizontalBorder · фон" />
       <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-medium h-[17px] justify-center leading-[0] left-[672px] not-italic text-[18px] text-[rgba(255,255,255,0.8)] top-[11131.53px] w-[324px]" data-node-id="2136:35">
-        <p className="leading-[24.8px]">Для растущего объёма диалогов</p>
+        <p className="leading-[24.8px]">≈ 800 диалогов · до 3 каналов</p>
       </div>
       <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-normal h-[17px] justify-center leading-[0] left-[672px] not-italic text-[16px] text-white top-[11054.53px] w-[324px]" data-node-id="2136:36">
-        <p className="leading-[24.8px]">20–50 обращений / день</p>
+        <p className="leading-[24.8px]">4 000 ответов бота / месяц</p>
       </div>
       <div className="-translate-x-1/2 -translate-y-1/2 absolute flex h-[158.306px] items-center justify-center left-[1221.34px] top-[10810.18px] w-[476.676px]" data-node-id="2132:12">
         <div className="flex-none rotate-[1.74deg]">
           <div className="[word-break:break-word] flex flex-col font-figma font-bold h-[144.061px] justify-center leading-[0] not-italic relative text-[#26775e] text-[0px] text-center tracking-[-1px] w-[472.53px]">
-            <p className="leading-[23px] mb-0 text-[24px]">10000 кредитов</p>
-            <p className="leading-[23px] text-[#4ea288] text-[24px]">уже на вашем аккаунте</p>
+            <p className="leading-[23px] mb-0 text-[24px]">Без автосписаний</p>
+            <p className="leading-[23px] text-[#4ea288] text-[24px]">оплата по счёту</p>
           </div>
         </div>
       </div>
-      <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[25px] justify-center leading-[0] left-[240px] not-italic text-[#151917] text-[22px] top-[11315.53px] w-[289px]" data-node-id="2007:271">
-        <p className="leading-[24.8px]">Более 100 диалогов в день</p>
+      <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[25px] justify-center leading-[0] left-[240px] not-italic text-[#151917] text-[20px] top-[11315.53px] w-[450px]" data-node-id="2007:271">
+        <p className="leading-[24.8px]">Более 10 000 ответов в месяц</p>
       </div>
       <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-normal h-[20px] justify-center leading-[0] left-[240px] not-italic text-[#626d68] text-[18px] top-[11346.03px] w-[459px]" data-node-id="2007:272">
-        <p className="leading-[20px]">Индивидуальный тариф: 1 ₽ за ответ Сэйлона, без НДС.</p>
+        <p className="leading-[20px]">Индивидуальные условия — согласуем заранее.</p>
       </div>
       <div className="absolute bg-[rgba(255,255,255,0.9)] h-[103px] left-[857px] rounded-[22px] top-[11276.03px] w-[632px]" data-node-id="2013:161" data-name="Paragraph+Overlay+Border · фон" />
       <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[25px] justify-center leading-[0] left-[888px] not-italic text-[#151917] text-[22px] top-[11315.53px] w-[520px]" data-node-id="2007:273">
-        <p className="leading-[24.8px]">Настройка бота - 40 000 ₽, без НДС</p>
+        <p className="leading-[24.8px]">Настройка нашей командой — 40 000 ₽</p>
       </div>
       <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-normal h-[20px] justify-center leading-[0] left-[888px] not-italic text-[#626d68] text-[18px] top-[11346.03px] w-[635px]" data-node-id="2007:274">
-        <p className="leading-[20px]">Вы можете бесплатно настроить бота сами или это можем сделать мы</p>
+        <p className="leading-[20px]">Самостоятельная настройка бесплатна · нестандартные задачи по согласованию</p>
       </div>
       <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[267.79px] justify-center leading-[0] left-[209.5px] not-italic text-[#151917] text-[64px] top-[11859.01px] tracking-[-2.88px] w-[355.081px]" data-node-id="2007:276">
         <p className="leading-[65.28px] mb-0">Что обычно</p>
@@ -1374,7 +1374,7 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
       </div>
       <div className="absolute border-[#dce3df] border-b border-solid h-[77px] left-[688.69px] top-[12223.03px] w-[800.81px]" data-node-id="2013:170" data-name="Details · фон" />
       <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[28px] justify-center leading-[0] left-[689px] not-italic text-[#151917] text-[22px] top-[12261.03px] w-[618px]" data-node-id="2007:284">
-        <p className="leading-[28px]">Что будет после 14 дней теста?</p>
+        <p className="leading-[28px]">Что будет после бесплатного месяца?</p>
       </div>
       <div className="absolute h-0 left-[1473.67px] top-[12261.03px] w-[11.667px]" data-node-id="2003:872" data-name="Vector">
         <div className="absolute inset-[-0.83px_-7.14%]">
@@ -1392,8 +1392,8 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
           <p className="leading-[65.28px]">работать именно с вашими клиентами</p>
         </div>
         <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-medium h-[49px] justify-center leading-[0] left-[212px] not-italic text-[22px] text-[rgba(10,36,29,0.7)] top-[304.5px] w-[760px]" data-node-id="2007:287">
-          <p className="leading-[29.25px] mb-0">14 дней, чтобы собрать настройки, подключить первый канал и проверить</p>
-          <p className="leading-[29.25px]">реальные диалоги - без обязательства сразу менять весь процесс</p>
+          <p className="leading-[29.25px] mb-0">Месяц, чтобы собрать настройки, подключить первый канал и проверить</p>
+          <p className="leading-[29.25px]">реальные диалоги — без автоматических списаний</p>
         </div>
         <div className="absolute bg-[#0a241d] h-[54px] left-[212px] rounded-[33554400px] top-[368px] w-[290px]" data-node-id="2013:10" data-name="Link · фон" />
         <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[19px] justify-center leading-[0] left-[340px] not-italic text-[18px] text-center text-white top-[394.5px] w-[270px]" data-node-id="2007:288">
@@ -1410,7 +1410,7 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
           </div>
         </div>
         <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-bold h-[22px] justify-center leading-[0] left-[553px] not-italic text-[#0a241d] text-[18px] top-[395px] w-[279px]" data-node-id="2007:289">
-          <p className="leading-[20px]">10 000 кредитов уже на аккаунте</p>
+          <p className="leading-[20px]">После теста — оплата по счёту</p>
         </div>
         <div className="absolute flex items-center justify-center left-[1323px] size-[319.604px] top-[137.97px]" data-node-id="2147:58">
           <div className="flex-none rotate-[4.92deg]">
@@ -1669,12 +1669,12 @@ export default function Component1920WLight({ language = "ru" }: { language?: "r
       <div className="-translate-y-1/2 absolute flex h-[117.199px] items-center justify-center left-[231.07px] top-[905.5px] w-[594.857px]" data-node-id="2143:46">
         <div className="flex-none rotate-[4.11deg]">
           <div className="[word-break:break-word] flex flex-col font-figma font-bold h-[75px] justify-center leading-[0] not-italic relative text-[72px] text-white tracking-[-1px] w-[591px]">
-            <p className="leading-[65.28px]">14 дней бесплатного теста</p>
+            <p className="leading-[65.28px]">Месяц бесплатно</p>
           </div>
         </div>
       </div>
-      <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-semibold h-[75px] justify-center leading-[0] left-[950px] not-italic text-[28px] text-white top-[968.5px] tracking-[-1px] w-[513px]" data-node-id="2143:49">
-        <p className="leading-[32px]">После регистрации вы получите бесплатные 10 000 кредитов на 14 дней для проверки AI-бота на реальных обращениях</p>
+      <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-figma font-semibold h-[132px] justify-center leading-[0] left-[950px] not-italic text-[28px] text-white top-[968.5px] tracking-[-1px] w-[513px]" data-node-id="2143:49">
+        <p className="leading-[32px]">Проверьте Сэйлона на своём бизнесе. Если решите продолжить, поможем выбрать тариф и выставим счёт без автоматических списаний</p>
       </div>
       <div className="absolute left-[211px] size-[52px] top-[17px]" data-node-id="2147:55" data-name="ChatGPT Image 19 сент. 2026 г., 19_15_28 1">
         <Image alt="" fill sizes="52px" className="object-cover pointer-events-none" src={imgChatGptImage1920261915281} />

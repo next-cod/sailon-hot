@@ -1,5 +1,6 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { FormEvent, useEffect, useState } from "react";
 import Image from "next/image";
 import { ArrowUp, MessageCircle, X } from "lucide-react";
@@ -12,27 +13,50 @@ import { JourneySection } from "@/components/sections/JourneySection";
 import { CharacterSection } from "@/components/sections/CharacterSection";
 import { ControlSection } from "@/components/sections/ControlSection";
 import { DemoSection } from "@/components/sections/DemoSection";
-import { LaunchSection } from "@/components/sections/LaunchSection";
+import { ChannelsSection } from "@/components/sections/ChannelsSection";
+import { SetupSection } from "@/components/sections/SetupSection";
 import { TrialBanner } from "@/components/sections/TrialBanner";
 import { PricingSection } from "@/components/sections/PricingSection";
 import { FaqSection } from "@/components/sections/FaqSection";
 import { FinalCtaSection } from "@/components/sections/FinalCtaSection";
 
+const SavingsCalculatorPopup = dynamic(
+  () => import("@/components/marketing/SavingsCalculatorPopup").then((module) => module.SavingsCalculatorPopup),
+  { ssr: false },
+);
+
 type ChatMessage = { author: "bot" | "visitor"; text: string };
 
 export function ResponsiveLanding() {
+  const [compactMode, setCompactMode] = useState(true);
+
+  useEffect(() => {
+    const query = window.matchMedia("(max-width: 1359px)");
+    const update = () => setCompactMode(query.matches);
+    update();
+    query.addEventListener("change", update);
+    return () => query.removeEventListener("change", update);
+  }, []);
+
+  const goToPricing = () => {
+    document.querySelector<HTMLElement>(".responsive-landing #pricing")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  if (!compactMode) return null;
+
   return (
     <div className="responsive-landing hot-landing">
       <Header />
       <main>
         <HeroSection />
+        <TrialBanner />
         <ProblemSection />
         <JourneySection />
         <CharacterSection />
         <ControlSection />
         <DemoSection />
-        <LaunchSection />
-        <TrialBanner />
+        <ChannelsSection />
+        <SetupSection />
         <PricingSection />
         <FaqSection />
         <FinalCtaSection />
@@ -40,6 +64,7 @@ export function ResponsiveLanding() {
       <Footer />
       <MobileCta />
       <ResponsiveChat />
+      <SavingsCalculatorPopup onCreateBot={goToPricing} />
     </div>
   );
 }

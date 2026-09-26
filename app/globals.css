@@ -49,8 +49,7 @@ a { color: inherit; text-decoration: none; }
 button, a { -webkit-tap-highlight-color: transparent; }
 button { font: inherit; }
 
-.responsive-landing { display: block; min-height: 100vh; overflow: clip; }
-.responsive-landing section[id] { scroll-margin-top: 88px; }
+.responsive-landing { display: none; }
 .container-shell { width: min(1280px, calc(100% - clamp(28px, 5vw, 64px))); margin-inline: auto; }
 .section-space { padding-block: clamp(70px, 8vw, 110px); }
 .display { font-size: clamp(52px, 6.25vw, 94px); line-height: .96; letter-spacing: -.055em; font-weight: 720; }
@@ -503,6 +502,26 @@ button { font: inherit; }
   background: #0a241d;
   color: #fff;
 }
+
+/* The hot landing uses the exact same desktop canvas as the full site. Only
+   the agreed sections are removed, so interactive layers follow the compacted
+   canvas instead of being rebuilt with different spacing or motion. */
+.hot-desktop-landing .journey-tabs,
+.hot-desktop-landing .journey-live-detail,
+.hot-desktop-landing .character-tabs,
+.hot-desktop-landing .control-hover-zone { translate: 0 -753px; }
+
+.hot-desktop-landing .scenario-tabs,
+.hot-desktop-landing .scenario-live { translate: 0 -1444.9px; }
+
+.hot-desktop-landing .faq-live,
+.hot-desktop-landing .cta-hit--pricing-green-left,
+.hot-desktop-landing .cta-hit--pricing-light,
+.hot-desktop-landing .cta-hit--pricing-green-right,
+.hot-desktop-landing .cta-hit--final { translate: 0 -3887.9px; }
+
+.hot-desktop-landing .team-hover-card,
+.hot-desktop-landing .cta-hit--custom { display: none; }
 
 .figma-page-canvas [data-node-id="2003:874"] {
   z-index: 40;

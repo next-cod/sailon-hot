@@ -20,8 +20,23 @@ const SavingsCalculatorPopup = dynamic(
 );
 
 const DESIGN_WIDTH = 1700;
-const DESIGN_HEIGHT = 13584;
+const REMOVED_RANGES = [
+  [1923.03, 2676.03],
+  [5501.03, 6192.93],
+  [7243.03, 8281.03],
+  [9078.03, 10483.03],
+] as const;
+const REMOVED_HEIGHT = REMOVED_RANGES.reduce((total, [start, end]) => total + end - start, 0);
+const DESIGN_HEIGHT = 13584 - REMOVED_HEIGHT;
 const DESKTOP_QUERY = "(min-width: 1360px)";
+
+function compactY(y: number) {
+  return y - REMOVED_RANGES.reduce((total, [start, end]) => total + (y >= end ? end - start : 0), 0);
+}
+
+function isRemovedY(y: number) {
+  return REMOVED_RANGES.some(([start, end]) => y >= start && y < end);
+}
 
 function getCanvasScale() {
   return Math.min(document.documentElement.clientWidth / DESIGN_WIDTH, 1.25);
@@ -37,17 +52,15 @@ const links = [
   { label: "Попробовать бесплатно", href: "#pricing", x: 210, y: 597, w: 299, h: 59, targetId: "2013:11" },
   { label: "Поразговаривать с ботом", href: "#demo", x: 551, y: 589, w: 248, h: 77, targetId: "2070:3" },
   { label: "Попробовать бесплатно", href: "#pricing", x: 516, y: 850, w: 273, h: 73, targetId: "2158:2" },
-  { label: "Попробовать бесплатно", href: "#pricing", x: 212, y: 12820, w: 290, h: 54, targetId: "2013:10" },
+  { label: "Попробовать бесплатно", href: "#pricing", x: 212, y: compactY(12820), w: 290, h: 54, targetId: "2013:10" },
 ];
 
 const anchors = [
-  { id: "how", y: 2747 },
-  { id: "features", y: 4609 },
-  { id: "demo", y: 5427 },
-  { id: "pricing", y: 10577 },
-  { id: "faq", y: 11537 },
-  { id: "team", y: 9650 },
-  { id: "custom", y: 9140 },
+  { id: "how", y: compactY(2747) },
+  { id: "features", y: compactY(4609) },
+  { id: "demo", y: compactY(6193) },
+  { id: "pricing", y: compactY(10577) },
+  { id: "faq", y: compactY(11537) },
 ];
 
 const anchorPositions: Record<string, number> = { "#top": 0, ...Object.fromEntries(anchors.map(({ id, y }) => [`#${id}`, y])) };
@@ -93,6 +106,40 @@ export function ExactFigmaCanvas() {
       if (frame) window.cancelAnimationFrame(frame);
     };
   }, []);
+
+  useLayoutEffect(() => {
+    if (!desktopActive) return;
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const compactPage = () => {
+      const page = canvas.querySelector<HTMLElement>('[data-node-id="2003:2"]');
+      if (!page) return false;
+      Array.from(page.children).forEach((child) => {
+        if (!(child instanceof HTMLElement)) return;
+        const storedY = child.dataset.hotOriginalTop;
+        const y = storedY === undefined
+          ? Number.parseFloat(window.getComputedStyle(child).top)
+          : Number.parseFloat(storedY);
+        if (!Number.isFinite(y)) return;
+        child.dataset.hotOriginalTop = String(y);
+        if (isRemovedY(y)) {
+          child.hidden = true;
+          return;
+        }
+        child.hidden = false;
+        child.style.top = `${compactY(y)}px`;
+      });
+      return true;
+    };
+
+    if (compactPage()) return;
+    const observer = new MutationObserver(() => {
+      if (compactPage()) observer.disconnect();
+    });
+    observer.observe(canvas, { childList: true, subtree: true });
+    return () => observer.disconnect();
+  }, [desktopActive]);
 
   useEffect(() => {
     const query = window.matchMedia(DESKTOP_QUERY);
@@ -162,7 +209,7 @@ export function ExactFigmaCanvas() {
 
   return (
     <main
-        className="figma-page-shell desktop-landing"
+        className="figma-page-shell desktop-landing hot-desktop-landing"
         style={{ width: DESIGN_WIDTH * scale, height: DESIGN_HEIGHT * scale }}
       >
       <header className={`sticky-site-header${headerCompact ? " is-compact" : ""}`}>
@@ -208,7 +255,7 @@ export function ExactFigmaCanvas() {
             onBlur={() => setInteracting(link.targetId, false)}
           />
         ))}
-        {desktopActive && <InteractiveFooter language={language} onNavigate={navigateTo} />}
+        {desktopActive && <InteractiveFooter language={language} onNavigate={navigateTo} top={compactY(12803)} />}
       </div>
     </main>
   );

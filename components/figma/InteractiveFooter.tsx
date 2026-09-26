@@ -11,7 +11,7 @@ const footerCopy = {
     company: "Компания",
     documents: "Документы",
     productLinks: ["Как отвечает", "Настройка под бизнес", "Сценарии", "Тарифы", "Вопросы"],
-    companyLinks: ["Команда", "Обсудить доработку", "Поддержка", "Контакты"],
+    companyLinks: ["Обсудить доработку", "Поддержка", "Контакты"],
     documentLinks: [
       "Публичная оферта",
       "Пользовательское соглашение",
@@ -29,7 +29,7 @@ const footerCopy = {
     company: "Company",
     documents: "Documents",
     productLinks: ["How it responds", "Business setup", "Scenarios", "Pricing", "Questions"],
-    companyLinks: ["Team", "Discuss a custom feature", "Support", "Contacts"],
+    companyLinks: ["Discuss a custom feature", "Support", "Contacts"],
     documentLinks: ["Public offer", "Terms of use", "Personal data policy", "Personal data consent", "Cookie policy"],
     legal: "© 2026 Saleon",
     entity: legalDetails.shortName,
@@ -38,7 +38,7 @@ const footerCopy = {
 } as const;
 
 const productHrefs = ["#how", "#features", "#demo", "#pricing", "#faq"];
-const companyHrefs = ["#team", "#custom", "/support", "/contacts"];
+const companyHrefs = ["/contacts", "/support", "/contacts"];
 const documentHrefs = [
   "/legal/offer",
   "/legal/terms",
@@ -47,7 +47,7 @@ const documentHrefs = [
   "/legal/cookies",
 ];
 
-export function InteractiveFooter({ language, onNavigate }: { language: Language; onNavigate: (href: string) => void }) {
+export function InteractiveFooter({ language, onNavigate, top }: { language: Language; onNavigate: (href: string) => void; top?: number }) {
   const copy = footerCopy[language];
 
   const renderLinks = (labels: readonly string[], hrefs: readonly string[]) =>
@@ -61,7 +61,7 @@ export function InteractiveFooter({ language, onNavigate }: { language: Language
     });
 
   return (
-    <footer className="interactive-footer" aria-label={language === "ru" ? "Подвал сайта" : "Website footer"}>
+    <footer className="interactive-footer" style={top === undefined ? undefined : { top }} aria-label={language === "ru" ? "Подвал сайта" : "Website footer"}>
       <div className="footer-brand">
         <button type="button" className="footer-brand-row" onClick={() => onNavigate("#top")} aria-label={language === "ru" ? "Сэйлон — наверх" : "Saleon — back to top"}>
           <Image src="/icon.png" alt="" width={52} height={52} />

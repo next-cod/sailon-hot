@@ -7,10 +7,11 @@ import { TrackedLink } from "@/components/ui/TrackedLink";
 import { siteLinks } from "@/config/links";
 
 const nav = [
-  ["Как работает", "how"],
-  ["Характер", "character"],
-  ["Демо", "demo"],
+  ["Как отвечает", "how"],
+  ["Настройка", "control"],
+  ["Сценарии", "demo"],
   ["Тарифы", "pricing"],
+  ["Вопросы", "faq"],
 ];
 
 export function Header() {
@@ -35,7 +36,7 @@ export function Header() {
           {nav.map(([label, id]) => <button key={id} type="button" className="text-[15px] font-bold transition-colors hover:text-[var(--leaf)]" onClick={() => navigateTo(id)}>{label}</button>)}
         </nav>
         <div className="hidden items-center gap-3 md:flex">
-          <TrackedLink href={siteLinks.signup} event="hero_signup_click" className="!min-h-[50px] !rounded-[11px] !px-6">Попробовать 30 дней бесплатно</TrackedLink>
+          <TrackedLink href={siteLinks.signup} event="hero_signup_click" className="!min-h-[50px] !rounded-[11px] !px-6">Попробовать бесплатно</TrackedLink>
         </div>
         <button className="grid size-11 place-items-center rounded-full border border-[var(--line)] bg-white lg:hidden" onClick={() => setOpen(!open)} aria-label={open ? "Закрыть меню" : "Открыть меню"} aria-expanded={open}>
           {open ? <X size={20} /> : <Menu size={20} />}
@@ -46,7 +47,7 @@ export function Header() {
           <nav className="grid gap-1" aria-label="Мобильная навигация">
             {nav.map(([label, id]) => <button key={id} type="button" onClick={() => navigateTo(id)} className="rounded-xl px-3 py-3 text-left text-lg font-semibold hover:bg-white">{label}</button>)}
           </nav>
-          <TrackedLink href={siteLinks.signup} event="hero_signup_click" className="mt-4 w-full">Попробовать 30 дней бесплатно</TrackedLink>
+          <TrackedLink href={siteLinks.signup} event="hero_signup_click" className="mt-4 w-full">Попробовать бесплатно</TrackedLink>
         </div>
       )}
     </header>

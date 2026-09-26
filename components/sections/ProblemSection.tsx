@@ -10,10 +10,10 @@ const items = [
 
 export function ProblemSection() {
   return (
-    <section id="how" className="section-space bg-white">
+    <section className="section-space bg-white">
       <div className="container-shell">
         <div className="grid gap-8 lg:grid-cols-[.75fr_1.25fr] lg:items-end">
-          <Reveal><h2 className="section-title max-w-[520px]">Понимает, что нужно клиенту</h2></Reveal>
+          <Reveal><h2 className="section-title max-w-[520px]">Понимает что нужно клиенту</h2></Reveal>
           <Reveal><p className="max-w-[520px] text-[22px] leading-[1.35] text-[var(--muted)]">Отвечает не шаблонно, понимает запрос, контекст и следующий шаг в разговоре</p></Reveal>
         </div>
         <div className="relative mt-14 grid gap-px overflow-hidden rounded-[26px] border border-[var(--line)] bg-[var(--line)] md:grid-cols-2">

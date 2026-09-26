@@ -98,7 +98,7 @@ const faq = [
   ["Нужно ли уметь программировать?", "Нет. Базовые знания, сценарии и характер настраиваются через понятный интерфейс."],
   ["Какие каналы доступны сейчас?", "Подключаем сайт и популярные мессенджеры. Точный список зависит от выбранной конфигурации и этапа запуска."],
   ["Можно подключить нашу CRM или расписание?", "Да. Типовые подключения настраиваются готовыми способами, нестандартную интеграцию можно обсудить отдельно."],
-  ["Что будет после 14 дней теста?", "Доступ не продлится автоматически. Вы увидите результаты теста и сможете сами решить, нужен ли платный тариф."],
+  ["Что будет после бесплатного месяца?", "Доступ не продлится автоматически. Вы увидите результаты теста и сможете сами решить, нужен ли платный тариф."],
 ];
 
 const team = [
@@ -418,7 +418,7 @@ export function FunctionalLayer({ rootRef, language }: { rootRef: React.RefObjec
       </section>
 
       {ctaAreas.map(({ radius, tone, ...area }, index) => (
-        <button key={index} type="button" className={`cta-hit cta-hit--${tone}`} style={{ ...area, borderRadius: radius }} aria-label={language === "ru" ? "Начать бесплатный тест" : "Start free trial"} onClick={() => { setSent(false); setDialogOpen(true); }} />
+        <button key={index} type="button" className={`cta-hit cta-hit--${tone}`} style={{ ...area, borderRadius: radius }} aria-label={language === "ru" ? "Попробовать месяц бесплатно" : "Start free trial"} onClick={() => { setSent(false); setDialogOpen(true); }} />
       ))}
       <button type="button" className="cta-hit cta-hit--chat" style={{ left: 541, top: 579, width: 252, height: 96 }} aria-label={t("Поразговаривать с ботом")} onMouseEnter={() => setChatHovered(true)} onMouseLeave={() => setChatHovered(false)} onFocus={() => setChatHovered(true)} onBlur={() => setChatHovered(false)} onClick={() => setBotChatOpen(true)} />
       <a className="cta-hit cta-hit--light cta-hit--custom" style={{ left: 864, top: 9389, width: 256, height: 50, borderRadius: 999 }} href="/contacts" aria-label={t("Обсудить доработку")} />
@@ -456,7 +456,7 @@ export function FunctionalLayer({ rootRef, language }: { rootRef: React.RefObjec
               <div className="trial-success"><span>✓</span><h2 id="trial-title">{language === "ru" ? "Письмо подготовлено" : "Email prepared"}</h2><p>{language === "ru" ? `Отправьте подготовленное письмо на ${legalDetails.email} — мы ответим и поможем запустить тест.` : `Send the prepared email to ${legalDetails.email}, and we will help you start the trial.`}</p><button type="button" onClick={() => setDialogOpen(false)}>{t("Готово")}</button></div>
             ) : (
               <form onSubmit={submit}>
-                <span className="trial-kicker">{t("14 дней бесплатно")}</span>
+                <span className="trial-kicker">{t("Месяц бесплатно")}</span>
                 <h2 id="trial-title">{t("Посмотрите Сэйлон на своих обращениях")}</h2>
                 <p>{t("Оставьте контакты — поможем подключить первый канал и настроить тест.")}</p>
                 <label>{t("Ваше имя")}<input required name="name" autoComplete="name" /></label>
@@ -465,7 +465,7 @@ export function FunctionalLayer({ rootRef, language }: { rootRef: React.RefObjec
                   <input required type="checkbox" name="personal-data-consent" />
                   <span>{language === "ru" ? "Согласен на " : "I agree to the "}<Link href="/legal/consent" target="_blank" rel="noopener noreferrer">{language === "ru" ? "обработку персональных данных" : "processing of personal data"}</Link></span>
                 </label>
-                <button type="submit">{t("Начать бесплатный тест")}</button>
+                <button type="submit">{t("Попробовать месяц бесплатно")}</button>
                 <small>{language === "ru" ? "Условия использования данных приведены в политике и отдельном согласии." : "Data-use terms are described in the policy and separate consent."}</small>
               </form>
             )}

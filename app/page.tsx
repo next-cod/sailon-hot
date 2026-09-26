@@ -1,3 +1,4 @@
+import { ExactFigmaCanvas } from "@/components/figma/ExactFigmaCanvas";
 import { ResponsiveLanding } from "@/components/responsive/ResponsiveLanding";
 import { siteConfig } from "@/config/links";
 
@@ -9,13 +10,14 @@ export default function HomePage() {
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
     description: siteConfig.description,
-    offers: { "@type": "AggregateOffer", lowPrice: "10000", highPrice: "30000", priceCurrency: "RUB" },
+    offers: { "@type": "AggregateOffer", lowPrice: "5900", highPrice: "24900", priceCurrency: "RUB" },
   };
   const serializedJsonLd = JSON.stringify(jsonLd).replace(/</g, "\\u003c");
 
   return (
     <>
       <ResponsiveLanding />
+      <ExactFigmaCanvas />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializedJsonLd }} />
     </>
   );
